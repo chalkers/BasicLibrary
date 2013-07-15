@@ -4,8 +4,8 @@
 
 This is a basic object orientated library for Arduino that consists of the following classes:
 
- 	* `DigitalPin`
-	* `AnalogPin`
+* `DigitalPin`
+* `AnalogPin`
 
 ###DigitalPin Example
 
