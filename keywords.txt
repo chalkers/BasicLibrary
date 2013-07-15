@@ -1,0 +1,8 @@
+AnalogPin	KEYWORD1
+increase	KEYWORD2
+decrease	KEYWORD2
+setIntensity	KEYWORD2
+
+DigitalPin	KEYWORD1
+on		KEYWORD2
+off		KEYWORD2
