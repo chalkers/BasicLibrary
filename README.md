@@ -7,7 +7,17 @@ This is a basic object orientated library for Arduino that consists of the follo
 * `DigitalPin`
 * `AnalogPin`
 
-###DigitalPin Example
+Both `AnalogPin` and `DigitalPin` instances start in the off state. 
+
+###DigitalPin 
+
+`DigitalPin` allows you to create a digital `OUTPUT` pin on a given pin number. It has three methods `on()`, `off()` and `write()`.
+
+Call `on()` so set the pin to `HIGH` and `off()` to set it to `LOW`. 
+
+The `write()` method takes a value of `true` (`1`, `HIGH`) or `false` (`0`, `LOW`) to manually switch it on or off.
+
+####Example
 
     #include <DigitalPin.h>
     
@@ -25,6 +35,34 @@ This is a basic object orientated library for Arduino that consists of the follo
      backward.on();
      delay(1000);
     }
+
+###AnalogPin 
+
+`AnalogPin` allows you to create a PWM `OUTPUT` pin on a given pin number. It has three methods `increase()`, `deacrese()` and `setIntensity()`. The `setIntensity()` method takes a value between `0` and `255`.
+
+Call the `increase()` and `decrease()` methods to increase or decrease the `_intensity`  values of `51`. This means that there are 6 unique values, `0`, `51`, `102`, `153`, `204` and `255`. Calling `increase()` on the pin when the `_intensity` is `255` will not increase it further. Calling `decrease()` on the pin when the `_intensity` is `0` will not decrease it further.
+
+The `setIntensity()` method takes one parameter, an `int` to manually set the `_intensity`. If the value is greater than `255` it will be set to `255`, anything less than `0` it will be set to `0`.
+
+####Example
+
+The following example will darken an LED on pin `12` until it switches off completely. On pin `13` an LED that is off initially and will get brighter until it gets to the value of `255`.
+
+    #include <AnalogPin.h>
+    
+    DigitalPin brighten(13);
+    DigitalPin darken(12);
+    
+    void setup(){
+		darken.setIntensity(255);
+    }
+    
+    void loop() {
+     brighten.increase();
+     forward.deacrease();
+     delay(250);
+    }
+
 
 ##Licence
 
