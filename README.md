@@ -11,9 +11,11 @@ Both `AnalogPin` and `DigitalPin` instances start in the off state.
 
 ###DigitalPin 
 
+####Default Behaviour
+
 `DigitalPin` allows you to create a digital `OUTPUT` pin on a given pin number. It has three methods `on()`, `off()` and `write()`.
 
-Call `on()` so set the pin to `HIGH` and `off()` to set it to `LOW`. 
+Call `on()` so set the pin to `HIGH` and `off()` to set it to `LOW`.
 
 The `write()` method takes a value of `true` (`1`, `HIGH`) or `false` (`0`, `LOW`) to manually switch it on or off.
 
@@ -35,6 +37,14 @@ The `write()` method takes a value of `true` (`1`, `HIGH`) or `false` (`0`, `LOW
      backward.on();
      delay(1000);
     }
+    
+####Alternate Behaviour
+
+Normally calling `on()` will set the pin to `HIGH` and `off()` will set it to `LOW`. However, you may want to define `on()` as `LOW` and `off()` as `HIGH`. You can do this by passing `true` to the constructor like so:
+
+    DigitalPin forward(13, true);
+
+If you choose to manually send `HIGH` or `LOW` to the `write()` method no intelligent switching will occur `HIGH` will still be __off__ and `LOW` will still be __on__.
 
 ###AnalogPin 
 
