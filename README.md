@@ -59,7 +59,7 @@ The following example will darken an LED on pin `12` until it switches off compl
     
     void loop() {
      brighten.increase();
-     forward.deacrease();
+     darken.deacrease();
      delay(250);
     }
 
