@@ -76,8 +76,7 @@ The following example will darken an LED on pin `12` until it switches off compl
 
 ##Licence
 
-Copyright 2013 Andrew Chalkley
-http://forefront.io
+Copyright 2013 [Andrew Chalkley](http://twitter.com/chalkers) http://forefront.io
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
