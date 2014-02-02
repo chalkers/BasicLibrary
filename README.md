@@ -2,7 +2,7 @@
 
 ##Introduction
 
-This is a basic object orientated library for Arduino that consists of the following classes:
+This is a basic object oriented library for Arduino that consists of the following classes:
 
 * `DigitalPin`
 * `AnalogPin`
